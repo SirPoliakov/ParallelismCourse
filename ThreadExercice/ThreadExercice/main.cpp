@@ -55,35 +55,35 @@ int main() {
 		}
 	);
 
-	std::thread t2[&productMat, A, B]() {
+	std::thread t2([&productMat, A, B]() {
 		productMat.a = product(A.a, B.b, A.b, B.e, A.c, B.h);  //
 	}
 	);
-	std::thread t3[&productMat, A, B]() {
+	std::thread t3([&productMat, A, B]() {
+		productMat.a = product(A.a, B.c, A.b, B.f, A.c, B.i);  //
+	}
+	);
+	std::thread t4([&productMat, A, B]() {
 		productMat.a = product(A.a, B.a, A.b, B.d, A.c, B.g);  //
 	}
 	);
-	std::thread t4[&productMat, A, B]() {
+	std::thread t5([&productMat, A, B]() {
+		productMat.a = product(A.d, B.a, A.e, B.d, A.f, B.g);  //
+	}
+	);
+	std::thread t6([&productMat, A, B]() {
 		productMat.a = product(A.a, B.a, A.b, B.d, A.c, B.g);  //
 	}
 	);
-	std::thread t5[&productMat, A, B]() {
+	std::thread t7([&productMat, A, B]() {
 		productMat.a = product(A.a, B.a, A.b, B.d, A.c, B.g);  //
 	}
 	);
-	std::thread t6[&productMat, A, B]() {
+	std::thread t8([&productMat, A, B]() {
 		productMat.a = product(A.a, B.a, A.b, B.d, A.c, B.g);  //
 	}
 	);
-	std::thread t7[&productMat, A, B]() {
-		productMat.a = product(A.a, B.a, A.b, B.d, A.c, B.g);  //
-	}
-	);
-	std::thread t8[&productMat, A, B]() {
-		productMat.a = product(A.a, B.a, A.b, B.d, A.c, B.g);  //
-	}
-	);
-	std::thread t9[&productMat, A, B]() {
+	std::thread t9([&productMat, A, B]() {
 		productMat.a = product(A.a, B.a, A.b, B.d, A.c, B.g);  //
 	}
 	);
